@@ -1,320 +1,56 @@
-u@zu:~$ pwd
-/home/zu
-zu@zu:~$ mkdir Lessons
-zu@zu:~$ cd Lessons
-zu@zu:~/Lessons$ mkdir LinuxExer1
-zu@zu:~/Lessons$ cd LinuxExer1
-zu@zu:~/Lessons/LinuxExer1$ mkdir ifpr
-zu@zu:~/Lessons/LinuxExer1$ mkdir trabalho
-zu@zu:~/Lessons/LinuxExer1$ cd ifpr
-zu@zu:~/Lessons/LinuxExer1/ifpr$ mkdir textos
-zu@zu:~/Lessons/LinuxExer1/ifpr$ cd ..
-zu@zu:~/Lessons/LinuxExer1$ touch comandos.txt
-zu@zu:~/Lessons/LinuxExer1$ cd
-zu@zu:~$ type -p curl >/dev/null || sudo apt install curl -y
-curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
-&& sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
-&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
-&& sudo apt update \
-&& sudo apt install gh -y
-[sudo] password for zu: 
-4+1 records in
-4+1 records out
-2270 bytes (2.3 kB, 2.2 KiB) copied, 0.000112917 s, 20.1 MB/s
-Get:1 https://cli.github.com/packages stable InRelease [3,917 B]                                              
-Get:2 https://download.docker.com/linux/ubuntu focal InRelease [57.7 kB]                                      
-Get:3 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]                                     
-Hit:4 http://mz.archive.ubuntu.com/ubuntu jammy InRelease                                                     
-Get:5 https://cli.github.com/packages stable/main amd64 Packages [340 B]                                      
-Get:6 http://mz.archive.ubuntu.com/ubuntu jammy-updates InRelease [114 kB]                                    
-Hit:7 https://ppa.launchpadcontent.net/git-core/ppa/ubuntu jammy InRelease                                    
-Get:8 http://security.ubuntu.com/ubuntu jammy-security/main amd64 DEP-11 Metadata [20.0 kB]                   
-Get:9 http://mz.archive.ubuntu.com/ubuntu jammy-backports InRelease [99.8 kB]
-Get:10 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 DEP-11 Metadata [13.2 kB]
-Get:11 http://mz.archive.ubuntu.com/ubuntu jammy-updates/main amd64 DEP-11 Metadata [94.8 kB]
-Get:12 http://mz.archive.ubuntu.com/ubuntu jammy-updates/restricted i386 Packages [22.2 kB]
-Get:13 http://mz.archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [410 kB]                   
-Get:14 http://mz.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 DEP-11 Metadata [255 kB]              
-Get:15 http://mz.archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 DEP-11 Metadata [940 B]             
-Get:16 http://mz.archive.ubuntu.com/ubuntu jammy-backports/universe amd64 DEP-11 Metadata [12.6 kB]           
-Fetched 1,214 kB in 9s (136 kB/s)                                                                             
-Reading package lists... Done
-Building dependency tree... Done
-Reading state information... Done
-7 packages can be upgraded. Run 'apt list --upgradable' to see them.
-Reading package lists... Done
-Building dependency tree... Done
-Reading state information... Done
-The following packages were automatically installed and are no longer required:
-  gcc-10-base gnome-getting-started-docs libatk-wrapper-java libboost-date-time1.71.0 libboost-locale1.71.0
-  libboost-thread1.71.0 libcc1-0 libdpkg-perl libffi7 libflashrom1 libftdi1-2 libfuse2 libgupnp-1.2-0
-  libicu66 libmozjs-68-0 libnettle7 libpoppler97 libprotobuf17 mysql-common popularity-contest vino
-  xul-ext-ubufox
-Use 'sudo apt autoremove' to remove them.
-The following NEW packages will be installed:
-  gh
-0 upgraded, 1 newly installed, 0 to remove and 7 not upgraded.
-Need to get 9,318 kB of archives.
-After this operation, 38.2 MB of additional disk space will be used.
-Get:1 https://cli.github.com/packages stable/main amd64 gh amd64 2.19.0 [9,318 kB]
-Fetched 9,318 kB in 2min 29s (62.4 kB/s)                                                                      
-Selecting previously unselected package gh.
-(Reading database ... 200202 files and directories currently installed.)
-Preparing to unpack .../archives/gh_2.19.0_amd64.deb ...
-Unpacking gh (2.19.0) ...
-Setting up gh (2.19.0) ...
-Processing triggers for man-db (2.10.2-1) ...
-zu@zu:~$ gh auth login
-? What account do you want to log into? GitHub.com
-? What is your preferred protocol for Git operations? HTTPS
-? Authenticate Git with your GitHub credentials? Yes
-? How would you like to authenticate GitHub CLI? Login with a web browser
-
-! First copy your one-time code: 0954-4CA8
-Press Enter to open github.com in your browser... 
-Gtk-Message: 13:48:27.162: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
-✓ Authentication complete.
-- gh config set -h github.com git_protocol https
-✓ Configured git protocol
-✓ Logged in as zunguza
-zu@zu:~$ cd Lessons
-zu@zu:~/Lessons$ cd LinuxExer1/
-ifpr/     trabalho/ 
-zu@zu:~/Lessons$ cd LinuxExer1/
-zu@zu:~/Lessons/LinuxExer1$ ls
-comandos.txt  ifpr  trabalho
-zu@zu:~/Lessons/LinuxExer1$ git add comandos.txt
-fatal: not a git repository (or any of the parent directories): .git
-zu@zu:~/Lessons/LinuxExer1$ git init
-hint: Using 'master' as the name for the initial branch. This default branch name
-hint: is subject to change. To configure the initial branch name to use in all
-hint: of your new repositories, which will suppress this warning, call:
-hint: 
-hint: 	git config --global init.defaultBranch <name>
-hint: 
-hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
-hint: 'development'. The just-created branch can be renamed via this command:
-hint: 
-hint: 	git branch -m <name>
-Initialized empty Git repository in /home/zu/Lessons/LinuxExer1/.git/
-zu@zu:~/Lessons/LinuxExer1$ git add comandos.txt
-zu@zu:~/Lessons/LinuxExer1$ fit commit
-Command 'fit' not found, did you mean:
-  command 'kfit' from snap kfit (0.1.4)
-  command 'lfit' from deb fitsh (0.9.4-1)
-  command 'fis' from deb redboot-tools (0.7build4)
-  command 'fid' from deb id-utils (4.6.28-20200521ss15dab)
-  command 'fim' from deb fim (0.5.3-9)
-  command 'wit' from deb wit (3.01a-4)
-  command 'fio' from deb fio (3.28-1)
-  command 'fet' from deb fet (5.48.1-1)
-  command 'vit' from deb vit (2.1.0-2)
-  command 'fmt' from deb coreutils (8.32-4.1ubuntu1)
-  command 'vfit' from deb vfit (2.1.0-3)
-  command 'flit' from deb flit (3.6.0-1)
-  command 'fmit' from deb fmit (1.2.6-0.2build1)
-  command 'git' from deb git (1:2.34.1-1ubuntu1.5)
-  command 'fnt' from deb fnt (1.4.1-1)
-See 'snap info <snapname>' for additional versions.
-zu@zu:~/Lessons/LinuxExer1$ git commit -m "Primeiro Commit"
-[master (root-commit) 54f1788] Primeiro Commit
- 1 file changed, 13 insertions(+)
- create mode 100644 comandos.txt
-zu@zu:~/Lessons/LinuxExer1$ gh push -u origin main
-unknown command "push" for "gh"
-
-Did you mean this?
-	auth
-
-Usage:  gh <command> <subcommand> [flags]
-
-Available commands:
-  alias
-  api
-  auth
-  browse
-  codespace
-  completion
-  config
-  extension
-  gist
-  gpg-key
-  help
-  issue
-  label
-  pr
-  release
-  repo
-  run
-  search
-  secret
-  ssh-key
-  status
-  workflow
-
-zu@zu:~/Lessons/LinuxExer1$ gh push -u origin auth
-unknown command "push" for "gh"
-
-Did you mean this?
-	auth
-
-Usage:  gh <command> <subcommand> [flags]
-
-Available commands:
-  alias
-  api
-  auth
-  browse
-  codespace
-  completion
-  config
-  extension
-  gist
-  gpg-key
-  help
-  issue
-  label
-  pr
-  release
-  repo
-  run
-  search
-  secret
-  ssh-key
-  status
-  workflow
-
-zu@zu:~/Lessons/LinuxExer1$ gh repo clone zunguza/Linux~
-GraphQL: Could not resolve to a Repository with the name 'zunguza/Linux~'. (repository)
-zu@zu:~/Lessons/LinuxExer1$ gh repo clone zunguza/Linux
-Cloning into 'Linux'...
-remote: Enumerating objects: 3, done.
-remote: Counting objects: 100% (3/3), done.
-remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
-Receiving objects: 100% (3/3), done.
-zu@zu:~/Lessons/LinuxExer1$ ls
-comandos.txt  ifpr  Linux  trabalho
-zu@zu:~/Lessons/LinuxExer1$ gh push
-unknown command "push" for "gh"
-
-Did you mean this?
-	auth
-
-Usage:  gh <command> <subcommand> [flags]
-
-Available commands:
-  alias
-  api
-  auth
-  browse
-  codespace
-  completion
-  config
-  extension
-  gist
-  gpg-key
-  help
-  issue
-  label
-  pr
-  release
-  repo
-  run
-  search
-  secret
-  ssh-key
-  status
-  workflow
-
-zu@zu:~/Lessons/LinuxExer1$ git push
-fatal: No configured push destination.
-Either specify the URL from the command-line or configure a remote repository using
-
-    git remote add <name> <url>
-
-and then push using the remote name
-
-    git push <name>
-
-zu@zu:~/Lessons/LinuxExer1$ git push comandos.txt
-fatal: The current branch master has no upstream branch.
-To push the current branch and set the remote as upstream, use
-
-    git push --set-upstream comandos.txt master
-
-To have this happen automatically for branches without a tracking
-upstream, see 'push.autoSetupRemote' in 'git help config'.
-
-zu@zu:~/Lessons/LinuxExer1$ git status
-On branch master
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-	Linux/
-
-nothing added to commit but untracked files present (use "git add" to track)
-zu@zu:~/Lessons/LinuxExer1$ ls
-comandos.txt  ifpr  Linux  trabalho
-zu@zu:~/Lessons/LinuxExer1$ cd Linux/
-zu@zu:~/Lessons/LinuxExer1/Linux$ touch n.txt
-zu@zu:~/Lessons/LinuxExer1/Linux$ git statud
-git: 'statud' is not a git command. See 'git --help'.
-
-The most similar command is
-	status
-zu@zu:~/Lessons/LinuxExer1/Linux$ git status
-On branch main
-Your branch is up to date with 'origin/main'.
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-	n.txt
-
-nothing added to commit but untracked files present (use "git add" to track)
-zu@zu:~/Lessons/LinuxExer1/Linux$ git add .
-zu@zu:~/Lessons/LinuxExer1/Linux$ git commit -m "Primeiro Commit"
-[main 6af8fe7] Primeiro Commit
- 1 file changed, 0 insertions(+), 0 deletions(-)
- create mode 100644 n.txt
-zu@zu:~/Lessons/LinuxExer1/Linux$ gh push
-unknown command "push" for "gh"
-
-Did you mean this?
-	auth
-
-Usage:  gh <command> <subcommand> [flags]
-
-Available commands:
-  alias
-  api
-  auth
-  browse
-  codespace
-  completion
-  config
-  extension
-  gist
-  gpg-key
-  help
-  issue
-  label
-  pr
-  release
-  repo
-  run
-  search
-  secret
-  ssh-key
-  status
-  workflow
-
-zu@zu:~/Lessons/LinuxExer1/Linux$ git push
-Enumerating objects: 4, done.
-Counting objects: 100% (4/4), done.
-Delta compression using up to 4 threads
-Compressing objects: 100% (2/2), done.
-Writing objects: 100% (3/3), 274 bytes | 274.00 KiB/s, done.
-Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
-To https://github.com/zunguza/Linux.git
-   d802dfa..6af8fe7  main -> main
-zu@zu:~/Lessons/LinuxExer1/Linux$ 
+pwd
+  469  mkdir Lessons
+  470  cd Lessons
+  471  mkdir LinuxExer1
+  472  cd LinuxExer1
+  473  mkdir ifpr
+  474  mkdir trabalho
+  475  cd ifpr
+  476  mkdir textos
+  477  cd ..
+  478  touch comandos.txt
+  479  cd
+  480  type -p curl >/dev/null || sudo apt install curl -y
+  481  curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null && sudo apt update && sudo apt install gh -y
+  482  gh auth login
+  483  cd Lessons
+  484  cd LinuxExer1/
+  485  ls
+  486  git add comandos.txt
+  487  git init
+  488  git add comandos.txt
+  489  fit commit
+  490  git commit -m "Primeiro Commit"
+  491  gh push -u origin main
+  492  gh push -u origin auth
+  493  gh repo clone zunguza/Linux~
+  494  gh repo clone zunguza/Linux
+  495  ls
+  496  gh push
+  497  git push
+  498  git push comandos.txt
+  499  git status
+  500  ls
+  501  cd Linux/
+  502  touch n.txt
+  503  git statud
+  504  git status
+  505  git add .
+  506  git commit -m "Primeiro Commit"
+  507  gh push
+  508  git push
+  509  del n.txt
+  510  rm n.txt
+  511  ls
+  512  git add comandos.txt
+  513  ls
+  514  git add comandos.txt
+  515  git commit -m "Segundo Commit"
+  516  git push
+  517  ls
+  518  git status
+  519  git add .
+  520  git commit -m "Remover n.txt"
+  521  git push
+  522  history
 
